@@ -27,12 +27,12 @@ COPY --from=builder /app/.next ./.next
 COPY --from=builder /app/public ./public
 
 
-ENV NODE_ENV=production
-ENV DB_HOST=["Ingrese host de la base de datos"]
-ENV DB_PORT=["Ingrese puerto de la base de datos"]
-ENV DB_USER=["Ingrese usuario de la base de datos"]
-ENV DB_PASSWORD=["Ingrese contraseña de la base de datos"]
-ENV DB_NAME=["Ingrese nombre de la base de datos"]
+ENV NODE_ENV= ${NODE_ENV}
+ENV DB_HOST= ${DB_HOST}
+ENV DB_PORT= ${DB_PORT}
+ENV DB_USER= ${DB_USER}
+ENV DB_PASSWORD= ${DB_PASSWORD}
+ENV DB_NAME= ${DB_NAME}
 
 
 EXPOSE 3000
