@@ -2,10 +2,13 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #1e40af;
+  --accent: #3b82f6;
+  --border: #dbeafe;
+  --hover: #eff6ff;
 }
 
-@theme inline {
+@theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
@@ -14,8 +17,11 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #ffffff;
+    --foreground: #1e40af;
+    --accent: #3b82f6;
+    --border: #dbeafe;
+    --hover: #eff6ff;
   }
 }
 
@@ -24,3 +30,193 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.main-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.page-header {
+  margin-bottom: 2rem;
+}
+
+.page-title {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: var(--foreground);
+}
+
+.page-description {
+  color: var(--accent);
+  font-size: 0.95rem;
+}
+
+.kpi-container {
+  background: var(--background);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.kpi-item {
+  flex: 1;
+  min-width: 150px;
+}
+
+.kpi-label {
+  color: var(--accent);
+  font-size: 0.85rem;
+  margin-bottom: 0.3rem;
+}
+
+.kpi-value {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--foreground);
+}
+
+/* Tablas */
+.report-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--background);
+  border: 1px solid var(--border);
+  box-shadow: 0 1px 3px rgba(30, 64, 175, 0.1);
+}
+
+.report-table th {
+  background: var(--hover);
+  padding: 0.75rem;
+  text-align: left;
+  font-weight: 600;
+  border-bottom: 2px solid var(--accent);
+  font-size: 0.9rem;
+  color: var(--foreground);
+}
+
+.report-table td {
+  padding: 0.75rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--foreground);
+}
+
+.report-table tbody tr:hover {
+  background-color: var(--hover);
+}
+
+.table-center {
+  text-align: center;
+}
+
+.table-right {
+  text-align: right;
+}
+
+/* Dashboard */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.dashboard-card {
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--background);
+  text-decoration: none;
+  color: inherit;
+  transition: box-shadow 0.2s;
+}
+
+.dashboard-card:hover {
+  box-shadow: 0 4px 8px rgba(59, 130, 246, 0.15);
+  border-color: var(--accent);
+}
+
+.dashboard-card-title {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: var(--foreground);
+  font-weight: 600;
+}
+
+.dashboard-card-desc {
+  font-size: 0.9rem;
+  color: var(--accent);
+  line-height: 1.4;
+}
+
+/* Filtros */
+.filter-form {
+  margin-bottom: 1rem;
+}
+
+.filter-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.filter-input,
+.filter-select {
+  padding: 0.5rem;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  width: 100%;
+  background: var(--background);
+  color: var(--foreground);
+}
+
+.filter-actions {
+  display: flex;
+  align-items: flex-end;
+}
+
+.filter-button {
+  padding: 0.5rem 1.5rem;
+  background-color: var(--accent);
+  color: var(--background);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  font-weight: 600;
+}
+
+.filter-button:hover {
+  background-color: var(--foreground);
+}
+
+/* Paginación */
+.pagination {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.pagination-link {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  text-decoration: none;
+  color: var(--foreground);
+  background: var(--background);
+}
+
+.pagination-link:hover {
+  background: var(--hover);
+  border-color: var(--accent);
+}
+
+.pagination-info {
+  padding: 0.5rem 1rem;
+}
+
