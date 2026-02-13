@@ -6,9 +6,9 @@ services:
     container_name: postgres_container
     restart: unless-stopped
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres123
-      POSTGRES_DB: actividad_db
+      POSTGRES_USER: ["Ingrese usuario de la base de datos"]
+      POSTGRES_PASSWORD: ["Ingrese contraseña de la base de datos"]
+      POSTGRES_DB: ["Ingrese nombre de la base de datos"]
     ports:
       - "127.0.0.1:5433:5432"
     volumes:
@@ -28,12 +28,12 @@ services:
     ports:
       - "3000:3000"
     environment:
-      DB_HOST: postgres
-      DB_PORT: 5432
-      DB_USER: app_user
-      DB_PASSWORD: app_password
-      DB_NAME: actividad_db
-      NODE_ENV: production
+      DB_HOST: ["Ingrese host de la base de datos"]
+      DB_PORT: ["Ingrese puerto de la base de datos"]
+      DB_USER: ["Ingrese usuario de la base de datos"]
+      DB_PASSWORD: ["Ingrese contraseña de la base de datos"]
+      DB_NAME: ["Ingrese nombre de la base de datos"]
+      NODE_ENV: 
     depends_on:
       postgres:
         condition: service_healthy
